@@ -5,6 +5,7 @@ import { UserModule } from './user/user.module';
 import { DatabasaModule } from './databasa/databasa.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import {ConfigModule} from "@nestjs/config";
+import { CategoriesModule } from './categories/categories.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import {ConfigModule} from "@nestjs/config";
       entities: [],
       synchronize: true,
     }),
+    CategoriesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
