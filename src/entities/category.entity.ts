@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn} from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany } from "typeorm";
+import { Blog } from "./blog.entity";
 
 
 @Entity('categories')
@@ -19,4 +20,6 @@ export class Category {
   @UpdateDateColumn()
   update_at:Date;
 
+  @OneToMany(() => Blog, (blog: Blog) => blog.category)
+  blogs: Blog[];
 }
