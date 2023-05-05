@@ -28,8 +28,8 @@ export class AuthService {
       "sub": user.email
     }
     const accessToken = this.jwtService.sign(payload);
-
-    return accessToken;
+    const tokenString = `Access_token=${accessToken}; HttpOnly; path; Max-Age=1d`;
+    return tokenString;
   }
 
 }
