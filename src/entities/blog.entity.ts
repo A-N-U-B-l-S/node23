@@ -11,7 +11,7 @@ export class Blog {
   title:string;
 
   @Column()
-  description:string;
+  content:string;
 
   @CreateDateColumn()
   created_at:Date;

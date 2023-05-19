@@ -25,10 +25,10 @@ export class AuthService {
 
     const payload = {
       "email": user.email,
-      "sub": user.email
+      "sub": user.id
     }
     const accessToken = this.jwtService.sign(payload);
-    const tokenString = `Access_token=${accessToken}; HttpOnly; path; Max-Age=1d`;
+    const tokenString = `Access_token=${accessToken}; HttpOnly; Path=/; Max-Age=1d`;
     return tokenString;
   }
 
